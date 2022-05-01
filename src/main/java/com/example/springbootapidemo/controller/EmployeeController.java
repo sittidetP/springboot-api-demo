@@ -69,4 +69,8 @@ public class EmployeeController {
     public List<Employee> search(@RequestBody Employee request){
         return employeeService.search(request);
     }
+    @DeleteMapping("/employees/{id}")
+    public Employee deleteEmployee(@PathVariable Integer id){
+        return employeeService.deleteEmployee(id);
+    }
 }

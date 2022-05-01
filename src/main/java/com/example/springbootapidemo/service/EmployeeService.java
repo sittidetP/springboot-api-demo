@@ -43,4 +43,10 @@ public class EmployeeService {
     public List<Employee> search(Employee request) {
         return dataRepository.findByFirstNameAndLastName(request.getFirstName(), request.getLastName());
     }
+
+    public Employee deleteEmployee(Integer id) {
+        Employee employee = getEmployee(id);
+        dataRepository.deleteById(id);
+        return employee;
+    }
 }
